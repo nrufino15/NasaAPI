@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mViewModel.getMovies().observe(this, new Observer<List<Sun>>() {
             @Override
-            public void onChanged(@Nullable List<Movie> movies) {
-                mSunListAdapter.movieList = movies;
+            public void onChanged(@Nullable List<Sun> suns) {
+                mSunListAdapter.sunList = suns;
                 mSunListAdapter.notifyDataSetChanged();
             }
         });
