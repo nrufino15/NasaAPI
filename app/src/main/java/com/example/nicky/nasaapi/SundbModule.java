@@ -19,7 +19,7 @@ public class SundbModule {
         if(sundbAPI == null){
             final OkHttpClient client = new OkHttpClient.Builder()
                     .addInterceptor(new LoggingInterceptor())
-                    .addInterceptor(new ApiKeyInterceptor())
+                    /*.addInterceptor(new ApiKeyInterceptor())*/
                     .connectTimeout(15, TimeUnit.SECONDS)
                     .readTimeout(15,TimeUnit.SECONDS)
                     .build();
@@ -36,7 +36,7 @@ public class SundbModule {
     }
 }
 
-class ApiKeyInterceptor implements Interceptor {
+/*class ApiKeyInterceptor implements Interceptor {
     @Override
     public okhttp3.Response intercept(Chain chain) throws IOException {
         Request original = chain.request();
@@ -52,7 +52,7 @@ class ApiKeyInterceptor implements Interceptor {
         Request request = requestBuilder.build();
         return chain.proceed(request);
     }
-}
+}*/
 
 class LoggingInterceptor implements Interceptor {
     @Override public okhttp3.Response intercept(Interceptor.Chain chain) throws IOException {

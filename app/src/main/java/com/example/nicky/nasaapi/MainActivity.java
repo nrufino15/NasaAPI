@@ -1,38 +1,56 @@
 package com.example.nicky.nasaapi;
 
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainViewModel mViewModel;
-    private RecyclerView mRecyclerView;
-    private SunListAdapter mSunListAdapter;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+    private SunViewModel sunViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRecyclerView = findViewById(R.id.sunList);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        mSunListAdapter = new SunListAdapter();
-        mRecyclerView.setAdapter(mSunListAdapter);
+        mViewPager = findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        mViewModel.getMovies().observe(this, new Observer<List<Sun>>() {
-            @Override
-            public void onChanged(@Nullable List<Sun> suns) {
-                mSunListAdapter.sunList = suns;
-                mSunListAdapter.notifyDataSetChanged();
+        TabLayout tabLayout = findViewById(R.id.tabs);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+        sunViewModel = ViewModelProviders.of(MainActivity.this).get(SunViewModel.class);
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0: return new ExplorerFragment();
+                case 1: return new FavoriteFragment();
+                default: return new ExplorerFragment();
             }
-        });
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 }

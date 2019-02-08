@@ -7,15 +7,15 @@ import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 import java.util.List;
 
-public class MainViewModel extends AndroidViewModel {
+public class SunViewModel extends AndroidViewModel {
     private SundbRepository sundbRepository;
 
-    public MainViewModel(@NonNull Application application) {
+    public SunViewModel(@NonNull Application application) {
         super(application);
         sundbRepository = new SundbRepository();
     }
 
-    public LiveData<List<Sun>> getMovies(){
+    public LiveData<List<Sun>> getSuns(){
         return sundbRepository.getSuns();
     }
 }
