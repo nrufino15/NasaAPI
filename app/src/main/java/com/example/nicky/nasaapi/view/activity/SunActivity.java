@@ -9,12 +9,12 @@ import android.view.View;
 
 import com.example.nicky.nasaapi.R;
 
-public class SelectedSunActivity extends AppCompatActivity {
+public class SunActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_sun);
+        setContentView(R.layout.activity_sun);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

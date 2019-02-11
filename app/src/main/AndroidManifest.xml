@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.activity.SelectedSunActivity"
-            android:label="@string/title_activity_selected_sun"
+            android:name=".view.activity.SunActivity"
+            android:label="@string/title_activity_sun"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".view.activity.TabbedActivity"
