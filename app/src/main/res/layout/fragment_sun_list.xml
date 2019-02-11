@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SunListFragment">
+    tools:context=".view.fragment.SunListFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/poemList"
+        android:id="@+id/sunList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

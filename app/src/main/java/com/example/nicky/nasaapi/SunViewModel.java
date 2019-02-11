@@ -5,6 +5,9 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
+
+import com.example.nicky.nasaapi.model.Sun;
+
 import java.util.List;
 
 public class SunViewModel extends AndroidViewModel {

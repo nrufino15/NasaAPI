@@ -1,4 +1,4 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.view.fragment;
 
 
 import android.os.Bundle;

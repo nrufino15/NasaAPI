@@ -2,6 +2,12 @@ package com.example.nicky.nasaapi;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+
+import com.example.nicky.nasaapi.api.SundbAPI;
+import com.example.nicky.nasaapi.api.SundbModule;
+import com.example.nicky.nasaapi.model.Sun;
+import com.example.nicky.nasaapi.model.SunsList;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;

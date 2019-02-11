@@ -1,11 +1,10 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.api;
 
 import android.util.Log;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

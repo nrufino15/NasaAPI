@@ -1,8 +1,9 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.view.fragment;
 
 
 import android.arch.lifecycle.LiveData;
-import android.support.v4.app.Fragment;
+
+import com.example.nicky.nasaapi.model.Sun;
 
 import java.util.List;
 

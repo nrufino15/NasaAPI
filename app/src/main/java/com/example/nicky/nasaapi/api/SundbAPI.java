@@ -1,4 +1,6 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.api;
+
+import com.example.nicky.nasaapi.model.SunsList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

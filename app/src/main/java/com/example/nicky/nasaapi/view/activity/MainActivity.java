@@ -1,4 +1,4 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.view.activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.design.widget.TabLayout;
@@ -8,6 +8,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.nicky.nasaapi.R;
+import com.example.nicky.nasaapi.SunViewModel;
+import com.example.nicky.nasaapi.view.fragment.ExplorerFragment;
+import com.example.nicky.nasaapi.view.fragment.FavoriteFragment;
 
 public class MainActivity extends AppCompatActivity {
 

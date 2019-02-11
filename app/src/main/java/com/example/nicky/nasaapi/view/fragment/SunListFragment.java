@@ -1,4 +1,4 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.view.fragment;
 
 
 import android.arch.lifecycle.LiveData;
@@ -12,6 +12,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.nicky.nasaapi.R;
+import com.example.nicky.nasaapi.SunViewModel;
+import com.example.nicky.nasaapi.model.Sun;
+import com.example.nicky.nasaapi.view.SunListAdapter;
 
 import java.util.List;
 

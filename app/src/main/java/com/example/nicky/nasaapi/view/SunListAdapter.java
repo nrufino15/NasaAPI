@@ -1,4 +1,4 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.view;
 
 
 import android.support.annotation.NonNull;
@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.nicky.nasaapi.GlideApp;
+import com.example.nicky.nasaapi.R;
+import com.example.nicky.nasaapi.model.Sun;
 
 import java.util.ArrayList;
 import java.util.List;

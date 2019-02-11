@@ -1,4 +1,4 @@
-package com.example.nicky.nasaapi;
+package com.example.nicky.nasaapi.model;
 
 public class Sun {
     public int id;
