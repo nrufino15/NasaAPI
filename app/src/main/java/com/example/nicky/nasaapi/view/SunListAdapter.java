@@ -1,7 +1,9 @@
 package com.example.nicky.nasaapi.view;
 
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +15,14 @@ import android.widget.TextView;
 import com.example.nicky.nasaapi.GlideApp;
 import com.example.nicky.nasaapi.R;
 import com.example.nicky.nasaapi.model.Sun;
+import com.example.nicky.nasaapi.model.SunItem;
+import com.example.nicky.nasaapi.view.activity.SelectedSunActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SunListAdapter extends RecyclerView.Adapter<SunListAdapter.SunListViewHolder>{
-    public List<Sun> sunList = new ArrayList<>();
+    public List<SunItem> sunList = new ArrayList<>();
 
     @NonNull
     @Override
@@ -29,10 +33,17 @@ public class SunListAdapter extends RecyclerView.Adapter<SunListAdapter.SunListV
 
     @Override
     public void onBindViewHolder(@NonNull SunListViewHolder holder, int position) {
-        Sun sun = sunList.get(position);
+        SunItem sunItem = sunList.get(position);
 
-        holder.title.setText(sun.title);
-        GlideApp.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500/" + sun.image_path).into(holder.image);
+        holder.title.setText(sunItem.data.get(0).title);
+        GlideApp.with(holder.itemView.getContext()).load(sunItem.links.get(0).href).into(holder.image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+            }
+        });
     }
 
     @Override

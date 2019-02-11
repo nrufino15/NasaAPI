@@ -5,10 +5,12 @@ import android.arch.lifecycle.MutableLiveData;
 
 import com.example.nicky.nasaapi.api.SundbAPI;
 import com.example.nicky.nasaapi.api.SundbModule;
-import com.example.nicky.nasaapi.model.Sun;
-import com.example.nicky.nasaapi.model.SunsList;
+
+import com.example.nicky.nasaapi.model.SunItem;
+import com.example.nicky.nasaapi.model.SunResponse;
 
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,17 +22,17 @@ public class SundbRepository {
         sundbAPI = SundbModule.getAPI();
     }
 
-    public LiveData<List<Sun>> getSuns(){
-        final MutableLiveData<List<Sun>> lista = new MutableLiveData<>();
+    public LiveData<List<SunItem>> getSuns(){
+        final MutableLiveData<List<SunItem>> lista = new MutableLiveData<>();
 
-        sundbAPI.getSuns().enqueue(new Callback<SunsList>() {
+        sundbAPI.getSuns().enqueue(new Callback<SunResponse>() {
             @Override
-            public void onResponse(Call<SunsList> call, Response<SunsList> response) {
-                lista.setValue(response.body().results);
+            public void onResponse(Call<SunResponse> call, Response<SunResponse> response) {
+                lista.setValue(response.body().collection.items);
             }
 
             @Override
-            public void onFailure(Call<SunsList> call, Throwable t) {
+            public void onFailure(Call<SunResponse> call, Throwable t) {
             }
         });
 

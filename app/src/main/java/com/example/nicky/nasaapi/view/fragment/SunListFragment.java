@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import com.example.nicky.nasaapi.R;
 import com.example.nicky.nasaapi.SunViewModel;
 import com.example.nicky.nasaapi.model.Sun;
+import com.example.nicky.nasaapi.model.SunItem;
+import com.example.nicky.nasaapi.model.SunResponse;
 import com.example.nicky.nasaapi.view.SunListAdapter;
 
 import java.util.List;
@@ -24,7 +26,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public abstract class SunListFragment extends Fragment {
+public class SunListFragment extends Fragment {
 
 
     SunViewModel sunViewModel;
@@ -41,17 +43,14 @@ public abstract class SunListFragment extends Fragment {
 
         sunViewModel = ViewModelProviders.of(this).get(SunViewModel.class);
 
-        getSuns().observe(this, new Observer<List<Sun>>() {
+        sunViewModel.getSuns().observe(this, new Observer<List<SunItem>>() {
             @Override
-            public void onChanged(@Nullable List<Sun> suns) {
-                //sunListAdapter.setList(suns);
+            public void onChanged(@Nullable List<SunItem> sunItems) {
+                sunListAdapter.sunList = sunItems;
                 sunListAdapter.notifyDataSetChanged();
             }
         });
 
         return view;
     }
-
-    abstract LiveData<List<Sun>> getSuns();
-
 }
