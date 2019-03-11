@@ -9,6 +9,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.nicky.nasaapi.R;
 import com.example.nicky.nasaapi.SunViewModel;
@@ -20,6 +23,7 @@ public class TabbedActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     private SunViewModel sunViewModel;
+    private ImageButton floarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,14 @@ public class TabbedActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         sunViewModel = ViewModelProviders.of(TabbedActivity.this).get(SunViewModel.class);
+
+        floarButton = (ImageButton) findViewById(R.id.fab);
+        floarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Volviendo ha inicio", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

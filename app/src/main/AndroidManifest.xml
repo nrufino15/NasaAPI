@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.SelectedSunActivity"></activity>
         <activity
             android:name=".view.activity.SunActivity"
             android:label="@string/title_activity_sun"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.activity.TabbedActivity"
             android:theme="@style/AppTheme.NoActionBar">
