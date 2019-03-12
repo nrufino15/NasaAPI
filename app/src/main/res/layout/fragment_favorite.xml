@@ -6,7 +6,7 @@
     tools:context=".view.fragment.SunListFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/sunList"
+        android:id="@+id/favoriteList"
         android:layout_width="match_parent"
         android:background="@color/colorSecondary"
         android:layout_height="wrap_content" />
