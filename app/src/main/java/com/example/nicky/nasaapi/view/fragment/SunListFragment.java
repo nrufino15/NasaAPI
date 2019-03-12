@@ -51,6 +51,7 @@ public class SunListFragment extends Fragment {
             }
         });
 
+
         return view;
     }
 }

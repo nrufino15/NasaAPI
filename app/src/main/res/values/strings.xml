@@ -8,11 +8,18 @@
     <string name="tab_text_2">Guardados</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Sun content texts -->
+    <string name="title">Title</string>
+    <string name="center">Center</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_selected_sun">SelectedSunActivity</string>
     <string name="title_activity_sun">SunActivity</string>
 
     <!-- Image descriptions -->
-    <string name="imageview_item_sun_description">Lugar donde se colocara las imagenes solicitadas a la API</string>
+    <string name="imageviewItemSunDescription">Lugar donde se colocara las imagenes solicitadas a la API</string>
+    <string name="imgDescription">Lugar donde va la imagen enviada por la API</string>
 </resources>

@@ -40,12 +40,12 @@ public class SunListAdapter extends RecyclerView.Adapter<SunListAdapter.SunListV
         GlideApp.with(holder.itemView.getContext()).load(sunItem.links.get(0).href).into(holder.image);
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), SunActivity.class);
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(holder.itemView.getContext(), SunActivity.class);
+//            }
+//        });
     }
 
     @Override
@@ -56,11 +56,16 @@ public class SunListAdapter extends RecyclerView.Adapter<SunListAdapter.SunListV
     class SunListViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView center;
+        TextView date;
+        TextView description;
         ImageView image;
+
         public SunListViewHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.sunTitle);
             center = itemView.findViewById(R.id.sunCenter);
+            date = itemView.findViewById(R.id.date);
+            description = itemView.findViewById(R.id.description);
             image = itemView.findViewById(R.id.sunImage);
         }
     }

@@ -11,8 +11,8 @@ import android.os.Bundle;
 
 import com.example.nicky.nasaapi.R;
 import com.example.nicky.nasaapi.SunViewModel;
-import com.example.nicky.nasaapi.view.fragment.ExplorerFragment;
 import com.example.nicky.nasaapi.view.fragment.FavoriteFragment;
+import com.example.nicky.nasaapi.view.fragment.SunListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch (position){
-                case 0: return new ExplorerFragment();
+                case 0: return new SunListFragment();
                 case 1: return new FavoriteFragment();
-                default: return new ExplorerFragment();
+                default: return new SunListFragment();
             }
         }
 

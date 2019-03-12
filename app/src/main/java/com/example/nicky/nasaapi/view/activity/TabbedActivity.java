@@ -15,15 +15,15 @@ import android.widget.Toast;
 
 import com.example.nicky.nasaapi.R;
 import com.example.nicky.nasaapi.SunViewModel;
-import com.example.nicky.nasaapi.view.fragment.ExplorerFragment;
 import com.example.nicky.nasaapi.view.fragment.FavoriteFragment;
+import com.example.nicky.nasaapi.view.fragment.SunListFragment;
 
 public class TabbedActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     private SunViewModel sunViewModel;
-    private ImageButton floarButton;
+    private ImageButton floatButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,8 @@ public class TabbedActivity extends AppCompatActivity {
 
         sunViewModel = ViewModelProviders.of(TabbedActivity.this).get(SunViewModel.class);
 
-        floarButton = (ImageButton) findViewById(R.id.fab);
-        floarButton.setOnClickListener(new View.OnClickListener() {
+        floatButton = (ImageButton) findViewById(R.id.fab);
+        floatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Volviendo ha inicio", Toast.LENGTH_LONG).show();
@@ -60,9 +60,9 @@ public class TabbedActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch (position){
-                case 0: return new ExplorerFragment();
+                case 0: return new SunListFragment();
                 case 1: return new FavoriteFragment();
-                default: return new ExplorerFragment();
+                default: return new SunListFragment();
             }
         }
 
